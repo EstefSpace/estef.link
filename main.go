@@ -8,7 +8,7 @@ package main
 import (
 	"os"
 
-	"estef.link/handlers"
+	"estef.link/routes"
 	"github.com/gofiber/fiber/v3"
 	"github.com/subosito/gotenv"
 )
@@ -21,13 +21,8 @@ func main() {
 	}
 	port := os.Getenv("PORT")
 
-	app.Get("/healthcheck", func(c fiber.Ctx) error {
-		return c.SendString("Hello, World!")
-	})
-
-	// API
-	api := app.Group("/api")
-	api.Post("/shorten", handlers.ShortenURL)
+	// iniciando rutas
+	routes.InitRoutes(app)
 
 	app.Listen(port)
 }
