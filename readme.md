@@ -50,3 +50,4 @@
 - `/db` Conexion a MongoDB
 - `/handlers` Manejo de Rutas y Controladores
 - `/models` Definición de Estructuras de Datos
+- `/routes` Inicialización de Rutas
